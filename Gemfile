@@ -5,8 +5,27 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 
+group :development do
+  gem 'annotate', '~> 2.5'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.10'
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
+
+  gem 'guard-spork'
+  gem 'spork'
+
+  gem 'rb-fsevent'
+end
+
+group :test do
+  gem 'capybara', :platform => :ruby
+  gem 'factory_girl_rails', '~> 4.0', :platform => :ruby
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,8 +41,10 @@ end
 
 gem 'jquery-rails'
 
+gem 'backbone-on-rails'
+
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -32,7 +53,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
