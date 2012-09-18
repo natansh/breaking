@@ -8,6 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(params[:user])
+    if @user.save
+      flash[:success] = "Welcome to Breaking!"
+      redirect_to @user
+      # TODO: Where do we go to now?
+    else
+      render 'new'
+    end
   end
 
   def update
