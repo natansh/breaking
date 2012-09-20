@@ -1,14 +1,18 @@
 <header>
-  <div class="heading">
-    <h1>Breaking</h1>
-  </div>
-  <li><%= link_to "Home", root_path %></li>
+  <div id="top-bar">
+    <div id="container"> 
+      <div class="heading">
+        <h1>Breaking</h1>
+      </div>
+      <li><%= link_to "Home", root_path %></li>
 
-  <% if signed_in? %>
-    <%= current_user %>
-    <%= link_to "Profile", current_user %>
-    <%= link_to "Log out", signout_path, method: "delete" %>
-  <% else %>
-    <%= link_to "Log in", signin_path %>
-  <% end %>
+      <% if signed_in? %>
+        <%= current_user %>
+        <%= link_to "Profile", current_user %>
+        <%= link_to "Log out", signout_path, method: "delete", class: "btn btn-transparent signin-btn" %>
+      <% else %>
+        <%= link_to "Log in", signin_path, class: "btn btn-transparent signin-btn" %>
+      <% end %>
+    </div>
+  </div>
 </header>
