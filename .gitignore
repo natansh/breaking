@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore Gemfile.lock as it creates issues in cross platform development
-./Gemfile.lock
+/Gemfile.lock
