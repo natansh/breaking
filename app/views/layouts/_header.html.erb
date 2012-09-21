@@ -6,12 +6,12 @@
       </div>
       <li><%= link_to "Home", root_path %></li>
 
-      <% if signed_in? %>
+      <% if logged_in? %>
         <%= current_user %>
         <%= link_to "Profile", current_user %>
-        <%= link_to "Log out", signout_path, method: "delete", class: "btn btn-transparent signin-btn" %>
+        <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-transparent login-btn" %>
       <% else %>
-        <%= link_to "Log in", signin_path, class: "btn btn-transparent signin-btn" %>
+        <%= link_to "Log in", login_path, class: "btn btn-transparent login-btn" %>
       <% end %>
     </div>
   </div>
